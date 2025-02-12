@@ -6,9 +6,9 @@
 
 // Creiamo un array dove inserire una lista di almeno 5 post, per ognuno indicare titolo, contenuto, immagine e tags (tags è un array di stringhe)
 
-//- Creiamo poi una rotta /bacheca che restituisca un oggetto json con la lista dei post.
+// Creiamo poi una rotta /bacheca che restituisca un oggetto json con la lista dei post.
 
-// Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
+//- Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
 
 // Testare su postman
 
@@ -49,7 +49,10 @@ const posts = [
       tags: ["dolce", "colazione", "ciambellone", "merenda"]
     }
   ];
-  
+
+// per pescare file statici da "public" (images/nome_foto.jpeg)
+app.use(express.static('public'));
+
 // rotta get a '/' (ipotetica home)
 app.get('/', (req, res) => {
     res.send('Server del mio blog');
